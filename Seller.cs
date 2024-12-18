@@ -177,7 +177,15 @@ Console.WriteLine($"Please Enter the product name you want it to remove {GetSell
    string productname = Console.ReadLine();
    string productnameup = productname.ToUpper();
    Product p = FindProductByName(GetSellListingProducts(), productnameup);
-   RemoveProduct(p);
+   if (p != null)
+    {
+        RemoveProduct(p);
+        Console.WriteLine("Product removed successfully.");
+    }
+    else
+    {
+        Console.WriteLine("Product not found in the sell list.");
+    }
 }
 
 public void remove_product_rent_list(){
@@ -185,7 +193,15 @@ public void remove_product_rent_list(){
     string productname = Console.ReadLine();
     string productnameup = productname.ToUpper();
     Product p = FindProductByName(GetRentProducts(), productnameup);
-    RemoveProduct(p);
+    if (p != null)
+    {
+        RemoveProduct(p);
+        Console.WriteLine("Product removed successfully.");
+    }
+    else
+    {
+        Console.WriteLine("Product not found in the rent list.");
+    }
 }
 
 public override void  display_menu(){
